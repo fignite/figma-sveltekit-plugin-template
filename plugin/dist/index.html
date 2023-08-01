@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="./favicon.png" />
+	<meta name="viewport" content="width=device-width" />
+
+	<style>
+		header.svelte-1u9z1tp.svelte-1u9z1tp {
+			display: flex;
+			justify-content: space-between
+		}
+
+		.corner.svelte-1u9z1tp.svelte-1u9z1tp {
+			width: 3em;
+			height: 3em
+		}
+
+		.corner.svelte-1u9z1tp a.svelte-1u9z1tp {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			height: 100%
+		}
+
+		.corner.svelte-1u9z1tp img.svelte-1u9z1tp {
+			width: 2em;
+			height: 2em;
+			object-fit: contain
+		}
+
+		nav.svelte-1u9z1tp.svelte-1u9z1tp {
+			display: flex;
+			justify-content: center;
+			--background: rgba(255, 255, 255, .7)
+		}
+
+		svg.svelte-1u9z1tp.svelte-1u9z1tp {
+			width: 2em;
+			height: 3em;
+			display: block
+		}
+
+		path.svelte-1u9z1tp.svelte-1u9z1tp {
+			fill: var(--background)
+		}
+
+		ul.svelte-1u9z1tp.svelte-1u9z1tp {
+			position: relative;
+			padding: 0;
+			margin: 0;
+			height: 3em;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			list-style: none;
+			background: var(--background);
+			background-size: contain
+		}
+
+		li.svelte-1u9z1tp.svelte-1u9z1tp {
+			position: relative;
+			height: 100%
+		}
+
+		li[aria-current=page].svelte-1u9z1tp.svelte-1u9z1tp:before {
+			--size: 6px;
+			content: "";
+			width: 0;
+			height: 0;
+			position: absolute;
+			top: 0;
+			left: calc(50% - var(--size));
+			border: var(--size) solid transparent;
+			border-top: var(--size) solid var(--color-theme-1)
+		}
+
+		nav.svelte-1u9z1tp a.svelte-1u9z1tp {
+			display: flex;
+			height: 100%;
+			align-items: center;
+			padding: 0 .5rem;
+			color: var(--color-text);
+			font-weight: 700;
+			font-size: .8rem;
+			text-transform: uppercase;
+			letter-spacing: .1em;
+			text-decoration: none;
+			transition: color .2s linear
+		}
+
+		a.svelte-1u9z1tp.svelte-1u9z1tp:hover {
+			color: var(--color-theme-1)
+		}
+
+		@font-face {
+			font-family: Fira Mono;
+			font-style: normal;
+			font-display: swap;
+			font-weight: 400;
+			src: url(./fira-mono-cyrillic-ext-400-normal.3df7909e.woff2) format("woff2"), url(./fira-mono-all-400-normal.1e3b098c.woff) format("woff");
+			unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F
+		}
+
+		@font-face {
+			font-family: Fira Mono;
+			font-style: normal;
+			font-display: swap;
+			font-weight: 400;
+			src: url(./fira-mono-cyrillic-400-normal.c7d433fd.woff2) format("woff2"), url(./fira-mono-all-400-normal.1e3b098c.woff) format("woff");
+			unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116
+		}
+
+		@font-face {
+			font-family: Fira Mono;
+			font-style: normal;
+			font-display: swap;
+			font-weight: 400;
+			src: url(./fira-mono-greek-ext-400-normal.9e2fe623.woff2) format("woff2"), url(./fira-mono-all-400-normal.1e3b098c.woff) format("woff");
+			unicode-range: U+1F00-1FFF
+		}
+
+		@font-face {
+			font-family: Fira Mono;
+			font-style: normal;
+			font-display: swap;
+			font-weight: 400;
+			src: url(./fira-mono-greek-400-normal.a8be01ce.woff2) format("woff2"), url(./fira-mono-all-400-normal.1e3b098c.woff) format("woff");
+			unicode-range: U+0370-03FF
+		}
+
+		@font-face {
+			font-family: Fira Mono;
+			font-style: normal;
+			font-display: swap;
+			font-weight: 400;
+			src: url(./fira-mono-latin-ext-400-normal.6bfabd30.woff2) format("woff2"), url(./fira-mono-all-400-normal.1e3b098c.woff) format("woff");
+			unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
+		}
+
+		@font-face {
+			font-family: Fira Mono;
+			font-style: normal;
+			font-display: swap;
+			font-weight: 400;
+			src: url(./fira-mono-latin-400-normal.e43b3538.woff2) format("woff2"), url(./fira-mono-all-400-normal.1e3b098c.woff) format("woff");
+			unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+		}
+
+		:root {
+			--font-body: Arial, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+			--font-mono: "Fira Mono", monospace;
+			--color-bg-0: rgb(202, 216, 228);
+			--color-bg-1: hsl(209, 36%, 86%);
+			--color-bg-2: hsl(224, 44%, 95%);
+			--color-theme-1: #ff3e00;
+			--color-theme-2: #4075a6;
+			--color-text: rgba(0, 0, 0, .7);
+			--column-width: 42rem;
+			--column-margin-top: 4rem;
+			font-family: var(--font-body);
+			color: var(--color-text)
+		}
+
+		body {
+			min-height: 100vh;
+			margin: 0;
+			background-attachment: fixed;
+			background-color: var(--color-bg-1);
+			background-size: 100vw 100vh;
+			background-image: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, .75) 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(180deg, var(--color-bg-0) 0%, var(--color-bg-1) 15%, var(--color-bg-2) 50%)
+		}
+
+		h1,
+		h2,
+		p {
+			font-weight: 400
+		}
+
+		p {
+			line-height: 1.5
+		}
+
+		a {
+			color: var(--color-theme-1);
+			text-decoration: none
+		}
+
+		a:hover {
+			text-decoration: underline
+		}
+
+		h1 {
+			font-size: 2rem;
+			text-align: center
+		}
+
+		h2 {
+			font-size: 1rem
+		}
+
+		pre {
+			font-size: 16px;
+			font-family: var(--font-mono);
+			background-color: #ffffff73;
+			border-radius: 3px;
+			box-shadow: 2px 2px 6px #ffffff40;
+			padding: .5em;
+			overflow-x: auto;
+			color: var(--color-text)
+		}
+
+		.text-column {
+			display: flex;
+			max-width: 48rem;
+			flex: .6;
+			flex-direction: column;
+			justify-content: center;
+			margin: 0 auto
+		}
+
+		input,
+		button {
+			font-size: inherit;
+			font-family: inherit
+		}
+
+		button:focus:not(:focus-visible) {
+			outline: none
+		}
+
+		@media (min-width: 720px) {
+			h1 {
+				font-size: 2.4rem
+			}
+		}
+
+		.visually-hidden {
+			border: 0;
+			clip: rect(0 0 0 0);
+			height: auto;
+			margin: 0;
+			overflow: hidden;
+			padding: 0;
+			position: absolute;
+			width: 1px;
+			white-space: nowrap
+		}
+
+		.app.svelte-8o1gnw.svelte-8o1gnw {
+			display: flex;
+			flex-direction: column;
+			min-height: 100vh
+		}
+
+		main.svelte-8o1gnw.svelte-8o1gnw {
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			padding: 1rem;
+			width: 100%;
+			max-width: 64rem;
+			margin: 0 auto;
+			box-sizing: border-box
+		}
+
+		footer.svelte-8o1gnw.svelte-8o1gnw {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			padding: 12px
+		}
+
+		footer.svelte-8o1gnw a.svelte-8o1gnw {
+			font-weight: 700
+		}
+
+		@media (min-width: 480px) {
+			footer.svelte-8o1gnw.svelte-8o1gnw {
+				padding: 12px 0
+			}
+		}
+	</style>
+	<style>
+		.counter.svelte-y96mxt.svelte-y96mxt {
+			display: flex;
+			border-top: 1px solid rgba(0, 0, 0, .1);
+			border-bottom: 1px solid rgba(0, 0, 0, .1);
+			margin: 1rem 0
+		}
+
+		.counter.svelte-y96mxt button.svelte-y96mxt {
+			width: 2em;
+			padding: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border: 0;
+			background-color: transparent;
+			touch-action: manipulation;
+			font-size: 2rem
+		}
+
+		.counter.svelte-y96mxt button.svelte-y96mxt:hover {
+			background-color: var(--color-bg-1)
+		}
+
+		svg.svelte-y96mxt.svelte-y96mxt {
+			width: 25%;
+			height: 25%
+		}
+
+		path.svelte-y96mxt.svelte-y96mxt {
+			vector-effect: non-scaling-stroke;
+			stroke-width: 2px;
+			stroke: #444
+		}
+
+		.counter-viewport.svelte-y96mxt.svelte-y96mxt {
+			width: 8em;
+			height: 4em;
+			overflow: hidden;
+			text-align: center;
+			position: relative
+		}
+
+		.counter-viewport.svelte-y96mxt strong.svelte-y96mxt {
+			position: absolute;
+			display: flex;
+			width: 100%;
+			height: 100%;
+			font-weight: 400;
+			color: var(--color-theme-1);
+			font-size: 4rem;
+			align-items: center;
+			justify-content: center
+		}
+
+		.counter-digits.svelte-y96mxt.svelte-y96mxt {
+			position: absolute;
+			width: 100%;
+			height: 100%
+		}
+
+		.hidden.svelte-y96mxt.svelte-y96mxt {
+			top: -100%;
+			-webkit-user-select: none;
+			user-select: none
+		}
+
+		section.svelte-19xx0bt.svelte-19xx0bt {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			flex: .6
+		}
+
+		h1.svelte-19xx0bt.svelte-19xx0bt {
+			width: 100%
+		}
+
+		.welcome.svelte-19xx0bt.svelte-19xx0bt {
+			display: block;
+			position: relative;
+			width: 100%;
+			height: 0;
+			padding: 0 0 calc(100% * 495 / 2048) 0
+		}
+
+		.welcome.svelte-19xx0bt img.svelte-19xx0bt {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			display: block
+		}
+	</style>
+	<link rel="modulepreload" href="./_app/immutable/entry/start.e3fb9adb.js">
+	<link rel="modulepreload" href="./_app/immutable/chunks/scheduler.cbf234a0.js">
+	<link rel="modulepreload" href="./_app/immutable/chunks/singletons.e900cdaf.js">
+	<link rel="modulepreload" href="./_app/immutable/chunks/index.14349a18.js">
+	<link rel="modulepreload" href="./_app/immutable/chunks/parse.bee59afc.js">
+	<link rel="modulepreload" href="./_app/immutable/entry/app.9eeec80c.js">
+	<link rel="modulepreload" href="./_app/immutable/chunks/index.d47c8428.js">
+	<link rel="modulepreload" href="./_app/immutable/nodes/0.9988dc12.js">
+	<link rel="modulepreload" href="./_app/immutable/chunks/stores.ade7cc4a.js">
+	<link rel="modulepreload" href="./_app/immutable/nodes/2.1f54bdfa.js">
+	<title>Home</title><!-- HEAD_svelte-t32ptj_START -->
+	<meta name="description" content="Svelte demo app"><!-- HEAD_svelte-t32ptj_END -->
+</head>
+
+<body data-sveltekit-preload-data="hover">
+	<div style="display: contents">
+		<div class="app svelte-8o1gnw">
+			<header class="svelte-1u9z1tp">
+				<div class="corner svelte-1u9z1tp" data-svelte-h="svelte-1jb641n"><a href="https://kit.svelte.dev"
+						class="svelte-1u9z1tp"><svg width="107" height="128" viewBox="0 0 107 128"
+							class="svelte-1u9z1tp">
+							<title>svelte-logo</title>
+							<path
+								d="M94.1566,22.8189c-10.4-14.8851-30.94-19.2971-45.7914-9.8348L22.2825,29.6078A29.9234,29.9234,0,0,0,8.7639,49.6506a31.5136,31.5136,0,0,0,3.1076,20.2318A30.0061,30.0061,0,0,0,7.3953,81.0653a31.8886,31.8886,0,0,0,5.4473,24.1157c10.4022,14.8865,30.9423,19.2966,45.7914,9.8348L84.7167,98.3921A29.9177,29.9177,0,0,0,98.2353,78.3493,31.5263,31.5263,0,0,0,95.13,58.117a30,30,0,0,0,4.4743-11.1824,31.88,31.88,0,0,0-5.4473-24.1157"
+								style="fill:#ff3e00" />
+							<path
+								d="M45.8171,106.5815A20.7182,20.7182,0,0,1,23.58,98.3389a19.1739,19.1739,0,0,1-3.2766-14.5025,18.1886,18.1886,0,0,1,.6233-2.4357l.4912-1.4978,1.3363.9815a33.6443,33.6443,0,0,0,10.203,5.0978l.9694.2941-.0893.9675a5.8474,5.8474,0,0,0,1.052,3.8781,6.2389,6.2389,0,0,0,6.6952,2.485,5.7449,5.7449,0,0,0,1.6021-.7041L69.27,76.281a5.4306,5.4306,0,0,0,2.4506-3.631,5.7948,5.7948,0,0,0-.9875-4.3712,6.2436,6.2436,0,0,0-6.6978-2.4864,5.7427,5.7427,0,0,0-1.6.7036l-9.9532,6.3449a19.0329,19.0329,0,0,1-5.2965,2.3259,20.7181,20.7181,0,0,1-22.2368-8.2427,19.1725,19.1725,0,0,1-3.2766-14.5024,17.9885,17.9885,0,0,1,8.13-12.0513L55.8833,23.7472a19.0038,19.0038,0,0,1,5.3-2.3287A20.7182,20.7182,0,0,1,83.42,29.6611a19.1739,19.1739,0,0,1,3.2766,14.5025,18.4,18.4,0,0,1-.6233,2.4357l-.4912,1.4978-1.3356-.98a33.6175,33.6175,0,0,0-10.2037-5.1l-.9694-.2942.0893-.9675a5.8588,5.8588,0,0,0-1.052-3.878,6.2389,6.2389,0,0,0-6.6952-2.485,5.7449,5.7449,0,0,0-1.6021.7041L37.73,51.719a5.4218,5.4218,0,0,0-2.4487,3.63,5.7862,5.7862,0,0,0,.9856,4.3717,6.2437,6.2437,0,0,0,6.6978,2.4864,5.7652,5.7652,0,0,0,1.602-.7041l9.9519-6.3425a18.978,18.978,0,0,1,5.2959-2.3278,20.7181,20.7181,0,0,1,22.2368,8.2427,19.1725,19.1725,0,0,1,3.2766,14.5024,17.9977,17.9977,0,0,1-8.13,12.0532L51.1167,104.2528a19.0038,19.0038,0,0,1-5.3,2.3287"
+								style="fill:#fff" />
+						</svg></a></div>
+				<nav class="svelte-1u9z1tp"><svg viewBox="0 0 2 3" aria-hidden="true" class="svelte-1u9z1tp">
+						<path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" class="svelte-1u9z1tp"></path>
+					</svg>
+					<ul class="svelte-1u9z1tp">
+						<li aria-current="page" class="svelte-1u9z1tp"><a href="/" class="svelte-1u9z1tp"
+								data-svelte-h="svelte-5a0zws">Home</a></li>
+						<li class="svelte-1u9z1tp"><a href="/about" class="svelte-1u9z1tp"
+								data-svelte-h="svelte-iphxk9">About</a></li>
+						<li class="svelte-1u9z1tp"><a href="/sverdle" class="svelte-1u9z1tp"
+								data-svelte-h="svelte-1mtf8rh">Sverdle</a></li>
+					</ul> <svg viewBox="0 0 2 3" aria-hidden="true" class="svelte-1u9z1tp">
+						<path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" class="svelte-1u9z1tp"></path>
+					</svg>
+				</nav>
+				<div class="corner svelte-1u9z1tp" data-svelte-h="svelte-1gilmbv"><a
+						href="https://github.com/sveltejs/kit" class="svelte-1u9z1tp"><svg viewBox="-3 -3 30 30"
+							class="svelte-1u9z1tp">
+							<path fill-rule="evenodd" clip-rule="evenodd"
+								d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5229 6.47715 22 12 22C17.5229 22 22 17.5229 22 12C22 6.47715 17.5229 2 12 2ZM0 12C0 5.3726 5.3726 0 12 0C18.6274 0 24 5.3726 24 12C24 18.6274 18.6274 24 12 24C5.3726 24 0 18.6274 0 12Z"
+								fill="rgba(0,0,0,0.7)" stroke="none" />
+							<path fill-rule="evenodd" clip-rule="evenodd"
+								d="M9.59162 22.7357C9.49492 22.6109 9.49492 21.4986 9.59162 19.399C8.55572 19.4347 7.90122 19.3628 7.62812 19.1833C7.21852 18.9139 6.80842 18.0833 6.44457 17.4979C6.08072 16.9125 5.27312 16.8199 4.94702 16.6891C4.62091 16.5582 4.53905 16.0247 5.84562 16.4282C7.15222 16.8316 7.21592 17.9303 7.62812 18.1872C8.04032 18.4441 9.02572 18.3317 9.47242 18.1259C9.91907 17.9201 9.88622 17.1538 9.96587 16.8503C10.0666 16.5669 9.71162 16.5041 9.70382 16.5018C9.26777 16.5018 6.97697 16.0036 6.34772 13.7852C5.71852 11.5669 6.52907 10.117 6.96147 9.49369C7.24972 9.07814 7.22422 8.19254 6.88497 6.83679C8.11677 6.67939 9.06732 7.06709 9.73672 7.99999C9.73737 8.00534 10.6143 7.47854 12.0001 7.47854C13.386 7.47854 13.8777 7.90764 14.2571 7.99999C14.6365 8.09234 14.94 6.36699 17.2834 6.83679C16.7942 7.79839 16.3844 8.99999 16.6972 9.49369C17.0099 9.98739 18.2372 11.5573 17.4833 13.7852C16.9807 15.2706 15.9927 16.1761 14.5192 16.5018C14.3502 16.5557 14.2658 16.6427 14.2658 16.7627C14.2658 16.9427 14.4942 16.9624 14.8233 17.8058C15.0426 18.368 15.0585 19.9739 14.8708 22.6234C14.3953 22.7445 14.0254 22.8257 13.7611 22.8673C13.2924 22.9409 12.7835 22.9822 12.2834 22.9982C11.7834 23.0141 11.6098 23.0123 10.9185 22.948C10.4577 22.9051 10.0154 22.8343 9.59162 22.7357Z"
+								fill="rgba(0,0,0,0.7)" stroke="none" />
+						</svg></a></div>
+			</header>
+			<main class="svelte-8o1gnw">
+				<section class="svelte-19xx0bt">
+					<h1 class="svelte-19xx0bt" data-svelte-h="svelte-11s73ib"><span class="welcome svelte-19xx0bt">
+							<picture>
+								<source srcset="/_app/immutable/assets/svelte-welcome.c18bcf5a.webp" type="image/webp">
+								<img src="/_app/immutable/assets/svelte-welcome.6c300099.png" alt="Welcome"
+									class="svelte-19xx0bt">
+							</picture>
+						</span>
+
+						to your new<br>SvelteKit app</h1>
+					<h2 data-svelte-h="svelte-1e36z0s">try editing <strong>src/routes/+page.svelte</strong></h2>
+					<div class="counter svelte-y96mxt"><button aria-label="Decrease the counter by one"
+							class="svelte-y96mxt" data-svelte-h="svelte-97ppyc"><svg aria-hidden="true"
+								viewBox="0 0 1 1" class="svelte-y96mxt">
+								<path d="M0,0.5 L1,0.5" class="svelte-y96mxt"></path>
+							</svg></button>
+						<div class="counter-viewport svelte-y96mxt">
+							<div class="counter-digits svelte-y96mxt" style="transform: translate(0, 0%)"><strong
+									class="hidden svelte-y96mxt" aria-hidden="true">1</strong> <strong
+									class="svelte-y96mxt">0</strong></div>
+						</div> <button aria-label="Increase the counter by one" class="svelte-y96mxt"
+							data-svelte-h="svelte-irev0c"><svg aria-hidden="true" viewBox="0 0 1 1"
+								class="svelte-y96mxt">
+								<path d="M0,0.5 L1,0.5 M0.5,0 L0.5,1" class="svelte-y96mxt"></path>
+							</svg></button>
+					</div>
+				</section>
+			</main>
+			<footer class="svelte-8o1gnw" data-svelte-h="svelte-1dlfr5">
+				<p>visit <a href="https://kit.svelte.dev" class="svelte-8o1gnw">kit.svelte.dev</a> to learn SvelteKit
+				</p>
+			</footer>
+		</div>
+
+		<script>
+			{
+				__sveltekit_1znthv = {
+					base: new URL(".", location).pathname.slice(0, -1),
+					env: {}
+				};
+
+				const element = document.currentScript.parentElement;
+
+				const data = [null, null];
+
+				Promise.all([
+					import("./_app/immutable/entry/start.e3fb9adb.js"),
+					import("./_app/immutable/entry/app.9eeec80c.js")
+				]).then(([kit, app]) => {
+					kit.start(app, element, {
+						node_ids: [0, 2],
+						data,
+						form: null,
+						error: null
+					});
+				});
+			}
+		</script>
+	</div>
+</body>
+
+</html>

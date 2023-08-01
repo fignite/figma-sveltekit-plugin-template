@@ -1,0 +1,13 @@
+{
+  "name": "SvelteKit Plugin",
+  "id": "svelte",
+  "api": "1.0.0",
+  "main": "dist/code.js",
+  "ui": "dist/index.html",
+  "enableProposedApi": false,
+  "editorType": ["figma", "figjam"],
+  "networkAccess": {
+    "allowedDomains": ["*"],
+    "reasoning": "Internet access for local development."
+  }
+}
