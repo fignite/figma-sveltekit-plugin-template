@@ -27,7 +27,7 @@ For now, I've decided that it is easier/better to bundle Figma plugins using Sve
 ### What's needed?
 
 - Something that can inline the JS that is created by Svelte Kit
-- Something that can handles the views in one page (currently Svelte Kit still exports them as separate files)
+- Something that can handle the views in one page (currently Svelte Kit still exports them as separate files)
 - Router must be memory based
 
 ## Resources
