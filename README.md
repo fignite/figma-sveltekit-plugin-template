@@ -24,6 +24,12 @@ I was able to use Svelte Kit to bundle routes into individual HTML files with th
 
 For now, I've decided that it is easier/better to bundle Figma plugins using Svelte and a router rather than using Svelte Kit. Alternatively, another approach could be to run your plugin on a server with Svelte Kit and link the plugin iframe to the server/website.
 
+### What's needed?
+
+- Something that can inline the JS that is created by Svelte Kit
+- Something that can handles the views in one page (currently Svelte Kit still exports them as separate files)
+- Router must be memory based
+
 ## Resources
 
 https://github.com/vitejs/vite/issues/621
